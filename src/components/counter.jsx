@@ -4,9 +4,9 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   //extends Component class from react module, will inherit lots of methods
+  //Special property that includes any data the component needs
+  //props
   state = {
-    //Special property that includes any data the component needs
-    //props
     value: this.props.value,
     tags: ["tag1", "tag2", "tag3"],
   };
@@ -24,9 +24,14 @@ class Counter extends Component {
 
   handleIncrement = (product) => {
     console.log(product);
-    this.setState({ value: this.state.value + 1 });   //Will not work
+    this.setState({ value: this.state.value + 1 });
     //obj.method(); this in the function will return ref to the object
     //function(); call standalone w/o object reference, default references window object. Strict mode is enabled returns undefined.
+  }
+
+  handleDelete = (product) => {
+    console.log(product);
+    this.setState({ value: this.state.value - 1 });
   }
 
 
@@ -39,6 +44,11 @@ class Counter extends Component {
           onClick={() => this.handleIncrement({ product: 1 })}
           className="btn btn-secondary btn-sm">
           Increment
+        </button>
+        <button
+          onClick={this.props.onDelete}       //Deletes the whole button
+          className="btn btn-danger btn-sm m-2">
+          Delete
         </button>
         {/*
         <ul>
