@@ -4,13 +4,11 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
-import Counter from "./components/counter"; //Counter is default export, no need for curly braces.
+import Counter from "./components/counters"; //Counter is default export, no need for curly braces.
 
 //replace App with Counter Component
-ReactDOM.render(
-  <React.StrictMode>
-    <Counter />
-  </React.StrictMode>,
+
+ReactDOM.render(<Counter />,
   document.getElementById("root")
 );
 
