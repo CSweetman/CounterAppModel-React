@@ -7,7 +7,7 @@ class Counter extends Component {
   //Special property that includes any data the component needs
   //props
   state = {
-    value: this.props.value,
+    value: this.props.counter.value,
     tags: ["tag1", "tag2", "tag3"],
   };
   /*
@@ -23,16 +23,12 @@ class Counter extends Component {
   }
 
   handleIncrement = (product) => {
-    console.log(product);
     this.setState({ value: this.state.value + 1 });
     //obj.method(); this in the function will return ref to the object
     //function(); call standalone w/o object reference, default references window object. Strict mode is enabled returns undefined.
   }
 
-  handleDelete = (product) => {
-    console.log(product);
-    this.setState({ value: this.state.value - 1 });
-  }
+
 
 
   render() {
@@ -46,7 +42,7 @@ class Counter extends Component {
           Increment
         </button>
         <button
-          onClick={this.props.onDelete}       //Deletes the whole button
+          onClick={() => this.props.onDelete(this.props.counter.id)}            //Deletes the whole button
           className="btn btn-danger btn-sm m-2">
           Delete
         </button>
