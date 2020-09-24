@@ -8,7 +8,7 @@ import Counter from "./components/counters"; //Counter is default export, no nee
 
 //replace App with Counter Component
 
-ReactDOM.render(<Counter />,
+ReactDOM.render(<App />,
   document.getElementById("root")
 );
 
