@@ -13,6 +13,18 @@ class App extends Component {
     ]
   };
 
+  constructor(props) {
+    super(props);
+    console.log('App-Constructor', this.props);
+    //this.state = this.props.something;
+  }
+
+  componentDidMount() {
+    //Perfect place for Ajax Calls
+    console.log('App - mounted');
+    //this.setState({movies});
+  }
+
   handleIncrement = (counter) => {
     //Wont update state directly, instead create new counters array
     const counters = [...this.state.counters];      //CLONES THE REFERENCE OF THE COUNTERS ARRAY IN THE STATE
